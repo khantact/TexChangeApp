@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "93231090137",
+    "project_id": "texchange-66396",
+    "storage_bucket": "texchange-66396.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93231090137:android:97b6d68e7366441cb571c8",
+        "android_client_info": {
+          "package_name": "com.example.texchange"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGA1-j5agNwv0-T_shDIROe5_LVkgGiy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
