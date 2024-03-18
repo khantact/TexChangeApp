@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">TexChange</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log In</string>
+    <string name="confirm_email">Confirm Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="texchange">TexChange</string>
+    <string name="sign_up"><u>Sign Up</u></string>
 </resources>

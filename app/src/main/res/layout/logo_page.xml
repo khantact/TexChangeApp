@@ -5,54 +5,67 @@
     android:background="@drawable/log_in_background"
     android:gravity="center"
     android:padding="16dp">
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="TexChange"
-            android:textAlignment="center"
             android:elevation="20dp"
-            android:textSize="60sp"/>
+            android:text="@string/texchange"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="60sp" />
+
         <EditText
-            android:id="@+id/UsernameInput"
+            android:id="@+id/EmailInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:inputType="text"
-            android:hint="Username"
-            android:padding="16dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/rounded_corner"
-            />
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="16dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
         <EditText
             android:id="@+id/PasswordInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:inputType="textPassword"
-            android:hint="Password"
-            android:padding="16dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/rounded_corner"
-            />
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Log In"
+            android:layout_marginTop="16dp"
             android:background="@drawable/rounded_corner"
             android:backgroundTint="@color/white"
-            android:textColor="@color/purple_700"
-            android:textSize="20sp"
-            android:layout_marginTop="16dp"
             android:padding="12dp"
-            />
+            android:text="@string/log_in"
+            android:textColor="@color/purple_700"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/SignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="30dp"
+            android:text="@string/sign_up"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
     </LinearLayout>
+
 </RelativeLayout>
