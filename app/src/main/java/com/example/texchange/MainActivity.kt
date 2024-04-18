@@ -1,5 +1,6 @@
 package com.example.texchange
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.Button
@@ -24,8 +25,10 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.logo_page)
 
         val signUpButton = findViewById<Button>(R.id.SignUp)
-        signUpButton.setOnClickListener {
 
+        signUpButton.setOnClickListener {
+            val intent = Intent(this@MainActivity, HomeActivity::class.java)
+            startActivity(intent)
         }
 
         /*val crashButton = Button(this)

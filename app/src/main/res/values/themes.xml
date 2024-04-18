@@ -9,4 +9,5 @@
         <item name="android:editTextColor">@color/edit_text</item>
         <item name="android:colorButtonNormal">@color/primary</item>
     </style>
+
 </resources>
