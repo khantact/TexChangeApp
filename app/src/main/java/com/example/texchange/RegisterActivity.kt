@@ -1,5 +1,44 @@
 package com.example.texchange
 
-class RegisterActivity {
+import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.ComponentActivity
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 
+class RegisterActivity : ComponentActivity() {
+    private lateinit var auth: FirebaseAuth
+    private var REGISTER = "REGISTER"
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        auth = Firebase.auth
+        setContentView(R.layout.register_page)
+        val registerButton = findViewById<Button>(R.id.RegisterButton)
+        val email = findViewById<EditText>(R.id.RegisterEmailInput).text.toString()
+        val password = findViewById<EditText>(R.id.RegisterPasswordInput).text.toString()
+        registerButton.setOnClickListener{
+            registerUser(auth, email, password)
+        }
+    }
+
+    private fun registerUser(auth: FirebaseAuth, email : String, password : String){
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
+            if (task.isSuccessful){
+                Log.d(REGISTER, "created user successfully")
+                val user = auth.currentUser
+            } else {
+                Log.w(REGISTER, "Error in creating user:", task.exception)
+                Toast.makeText(
+                    baseContext,
+                    "Failed to create new user",
+                    Toast.LENGTH_SHORT,
+                ).show()
+            }
+        }
+    }
 }

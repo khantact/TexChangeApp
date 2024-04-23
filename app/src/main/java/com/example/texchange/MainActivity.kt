@@ -1,6 +1,12 @@
 package com.example.texchange
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,6 +23,7 @@ import com.google.firebase.auth.auth
 
 class MainActivity : ComponentActivity() {
     private lateinit var auth: FirebaseAuth
+    private final var LOGIN = "LOGIN"
     public override fun onStart(){
         super.onStart()
         val currentUser = auth.currentUser
@@ -28,6 +35,34 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         auth = Firebase.auth
         setContentView(R.layout.logo_page)
+        val signUpTextView = findViewById<TextView>(R.id.SignUp)
+        val logInButton = findViewById<Button>(R.id.LogInButton)
+        val email = findViewById<EditText>(R.id.EmailInput).text.toString()
+        val password = findViewById<EditText>(R.id.PasswordInput).text.toString()
+        logInButton.setOnClickListener {
+            logInUser(auth, email, password)
+        }
+        signUpTextView.setOnClickListener{
+            signUpClicked()
+        }
+    }
+
+    private fun signUpClicked(){
+        val intent = Intent(this@MainActivity, RegisterActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun logInUser(auth: FirebaseAuth, email : String, password : String){
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
+            if (task.isSuccessful) {
+                // sign in success
+                Log.d(LOGIN, "successful login")
+                val user = auth.currentUser
+            } else {
+                Log.w(LOGIN, "Login fail", task.exception)
+                Toast.makeText(baseContext, "Authentication failed", Toast.LENGTH_SHORT,).show()
+            }
+        }
     }
 
     private fun reload() {
