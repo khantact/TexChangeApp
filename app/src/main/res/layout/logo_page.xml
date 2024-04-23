@@ -48,7 +48,6 @@
             android:textColorHint="@color/white" />
 
         <Button
-            android:id="@+id/LogInButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -58,17 +57,17 @@
             android:text="@string/log_in"
             android:textColor="@color/purple_700"
             android:textSize="20sp" />
-        <TextView
+        <Button
             android:id="@+id/SignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="30dp"
-            android:clickable="true"
+            android:layout_marginTop="16dp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/purple_700"
             android:text="@string/sign_up"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:focusable="true" />
+            android:textSize="20sp"/>
     </LinearLayout>
 
 </RelativeLayout>

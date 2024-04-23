@@ -8,4 +8,6 @@
     <string name="register">Register</string>
     <string name="texchange">TexChange</string>
     <string name="sign_up"><u>Sign Up</u></string>
+    <string name="add">Add to Cart</string>
+
 </resources>
