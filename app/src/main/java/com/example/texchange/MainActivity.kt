@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
             startActivity(intent)
         }
 
-        /*val crashButton = Button(this)
+        val crashButton = Button(this)
         crashButton.text = "Test Crash"
         crashButton.setOnClickListener {
             throw RuntimeException("Test Crash")
@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT
             )
-        )*/
+        )
 
 
     }

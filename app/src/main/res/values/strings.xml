@@ -8,6 +8,19 @@
     <string name="register">Register</string>
     <string name="texchange">TexChange</string>
     <string name="sign_up"><u>Sign Up</u></string>
+
+    <string name="price">55.49</string>
+    <string name="price2">19.99</string>
+    <string name="price3">75.89</string>
+    <string name="price4">40.55</string>
+    <string name="price5">10.99</string>
+
+    <string name="one">Microwave</string>
+    <string name="two">Textbook</string>
+    <string name="three">Coffee Machine</string>
+    <string name="four">Cutlery</string>
+    <string name="five">Jeans</string>
+
     <string name="add">Add to Cart</string>
 
 </resources>
