@@ -27,7 +27,7 @@ fun productList(resources: Resources): List<ProductItem> {
         ProductItem(
             id = 3,
             name = resources.getString(R.string.three),
-            image = R.drawable.ic_launcher_foreground,
+            image = R.drawable.coffee_machine,
             price = three
         ),
         ProductItem(
@@ -39,7 +39,7 @@ fun productList(resources: Resources): List<ProductItem> {
         ProductItem(
             id = 5,
             name = resources.getString(R.string.five),
-            image = R.drawable.ic_launcher_foreground,
+            image = R.drawable.jeans,
             price = five
         )
     )

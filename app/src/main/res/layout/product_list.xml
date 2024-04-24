@@ -16,8 +16,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:contentDescription="who cares"
-        android:src="@drawable/ic_launcher_foreground"
+        app:maxImageSize="56dp"
+        app:backgroundTint="@color/primary_light"
+        app:borderWidth="0dp"
+        android:contentDescription="button"
+        android:src="@drawable/ic_cart_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
