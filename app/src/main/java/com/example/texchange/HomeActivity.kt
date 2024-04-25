@@ -3,14 +3,14 @@ package com.example.texchange
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.ComponentActivity
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class HomeActivity : ComponentActivity() {
+class HomeActivity : AppCompatActivity() {
 
     companion object {
-        const val TAG = "MainActivity"
+        const val TAG = "HomeActivity"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,19 +19,20 @@ class HomeActivity : ComponentActivity() {
 
         val appRecycleView = findViewById<RecyclerView>(R.id.recycle)
 
-        val appArrayList: ArrayList<ProductItem> = Constants.getAppData()
+        val appArrayList = Constants.getAppData()
         val appAdapter = AppAdapter(this, appArrayList)
         val gridLayoutManager = GridLayoutManager(this, 2)
 
         appRecycleView.layoutManager = gridLayoutManager
         appRecycleView.adapter = appAdapter
 
+
         appAdapter.setOnClickListener(object :
             AppAdapter.OnClickListener {
             override fun onClick(position: Int, model: ProductItem) {
-                val id = model.getProductIDNum()
+                val id = model.id
                 if (id > 0) {
-                    val intent = Intent(this@HomeActivity, ProductItemDetails::class.java)
+                    val intent = Intent(this@HomeActivity, ProductDetailActivity::class.java)
                     intent.putExtra("itemID", id)
                     startActivity(intent)
                 }

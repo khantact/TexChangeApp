@@ -21,8 +21,8 @@ class AppAdapter(private val context: HomeActivity, productArrayList: List<Produ
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val model: ProductItem = productArrayList[position]
-        holder.productPic.setImageResource(model.getProductPic())
-        holder.productName.text = model.getProductName()
+        model.image?.let { holder.productPic.setImageResource(it) }
+        holder.productName.text = model.name
         holder.itemView.setOnClickListener {
             if (onClickListener != null) {
                 onClickListener!!.onClick(position, model)

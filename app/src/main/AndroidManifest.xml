@@ -27,9 +27,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.texchange.RegisterActivity"
-            android:exported="true" />
-        <activity
             android:name="com.example.texchange.ProductItemDetails"
             android:exported = "true">
             <intent-filter>
