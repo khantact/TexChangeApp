@@ -1,5 +1,6 @@
 package com.example.texchange
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -19,10 +20,14 @@ class RegisterActivity : ComponentActivity() {
         auth = Firebase.auth
         setContentView(R.layout.register_page)
         val registerButton = findViewById<Button>(R.id.RegisterButton)
-        val email = findViewById<EditText>(R.id.RegisterEmailInput).text.toString()
-        val password = findViewById<EditText>(R.id.RegisterPasswordInput).text.toString()
         registerButton.setOnClickListener{
-            registerUser(auth, email, password)
+            val email = findViewById<EditText>(R.id.RegisterEmailInput).text.toString()
+            val password = findViewById<EditText>(R.id.RegisterPasswordInput).text.toString()
+            if (!email.isEmpty() && !password.isEmpty()){
+                registerUser(auth, email, password)
+            } else {
+                Toast.makeText(this, "Email and Password can not be empty", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -31,6 +36,8 @@ class RegisterActivity : ComponentActivity() {
             if (task.isSuccessful){
                 Log.d(REGISTER, "created user successfully")
                 val user = auth.currentUser
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
             } else {
                 Log.w(REGISTER, "Error in creating user:", task.exception)
                 Toast.makeText(

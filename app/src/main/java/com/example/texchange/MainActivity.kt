@@ -37,9 +37,9 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.logo_page)
         val signUpTextView = findViewById<TextView>(R.id.SignUp)
         val logInButton = findViewById<Button>(R.id.LogInButton)
-        val email = findViewById<EditText>(R.id.EmailInput).text.toString()
-        val password = findViewById<EditText>(R.id.PasswordInput).text.toString()
         logInButton.setOnClickListener {
+            val email = findViewById<EditText>(R.id.EmailInput).text.toString()
+            val password = findViewById<EditText>(R.id.PasswordInput).text.toString()
             logInUser(auth, email, password)
         }
         signUpTextView.setOnClickListener{
@@ -53,15 +53,21 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun logInUser(auth: FirebaseAuth, email : String, password : String){
-        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
-            if (task.isSuccessful) {
-                // sign in success
-                Log.d(LOGIN, "successful login")
-                val user = auth.currentUser
-            } else {
-                Log.w(LOGIN, "Login fail", task.exception)
-                Toast.makeText(baseContext, "Authentication failed", Toast.LENGTH_SHORT,).show()
+        if (email != "" && password != ""){
+            auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // sign in success
+                    Log.d(LOGIN, "successful login")
+                    val user = auth.currentUser
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    Log.w(LOGIN, "Login fail", task.exception)
+                    Toast.makeText(baseContext, "Authentication failed", Toast.LENGTH_SHORT,).show()
+                }
             }
+        } else {
+            Toast.makeText(baseContext, "You are missing a required field", Toast.LENGTH_SHORT).show()
         }
     }
 

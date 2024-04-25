@@ -1,26 +1,37 @@
 {
   "project_info": {
-    "project_number": "206479269284",
-    "project_id": "texchange-92e20",
-    "storage_bucket": "texchange-92e20.appspot.com"
+    "project_number": "191772748536",
+    "firebase_url": "https://texchange-70636-default-rtdb.firebaseio.com",
+    "project_id": "texchange-70636",
+    "storage_bucket": "texchange-70636.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:206479269284:android:33c28f49cb3b7bdabef531",
+        "mobilesdk_app_id": "1:191772748536:android:74426397673769894ce90d",
         "android_client_info": {
           "package_name": "com.example.texchange"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "191772748536-d9qup5n26vp7piffq2bnis8om3mi7enl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyCZLH2Qd2oQQ6xC4U5pfKCoPYJmX3boaaY"
+          "current_key": "AIzaSyBh4SuUyTTQhVNG5jUPY-Iq-tzPDS3THGU"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191772748536-d9qup5n26vp7piffq2bnis8om3mi7enl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
