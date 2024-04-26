@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 
@@ -39,11 +40,17 @@ class ProductDetailActivity : AppCompatActivity() {
 
             removeProductButton.setOnClickListener {
                 if (currentProduct != null) {
-                    productDetailViewModel.addToCart(currentProduct)
+                    if (!productDetailViewModel.addToCart(currentProduct)) {
+                        Toast.makeText(this, getString(R.string.inCart), Toast.LENGTH_LONG)
+                            .show()
+                    }
+                    else {
+                        val intent = Intent(this@ProductDetailActivity, ProductListActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }
                 }
-                val intent = Intent(this@ProductDetailActivity, ProductListActivity::class.java)
-                startActivity(intent)
-                finish()
+
             }
         }
 

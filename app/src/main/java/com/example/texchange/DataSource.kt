@@ -47,6 +47,13 @@ class DataSource(resources: Resources) {
         return null
     }
 
+    fun checkCartForProduct(id: Long): ProductItem? {
+        shoppingCartLiveData.value?.let { cart ->
+            return cart.firstOrNull{ it.id == id}
+        }
+        return null
+    }
+
     fun getProductList(): LiveData<List<ProductItem>> {
         return productLiveData
     }

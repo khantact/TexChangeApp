@@ -22,5 +22,6 @@
     <string name="five">Jeans</string>
 
     <string name="add">Add to Cart</string>
+    <string name="inCart">Item is already in cart</string>
 
 </resources>

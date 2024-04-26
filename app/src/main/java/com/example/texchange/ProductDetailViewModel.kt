@@ -14,8 +14,12 @@ class ProductDetailViewModel(private val datasource: DataSource) : ViewModel() {
         datasource.removeProduct(product)
     }
 
-    fun addToCart(product: ProductItem) {
-        datasource.addToCart(product)
+    fun addToCart(product: ProductItem) : Boolean {
+        if (datasource.checkCartForProduct(product.id) == null) {
+            datasource.addToCart(product)
+            return true
+        }
+        return false
     }
 }
 
