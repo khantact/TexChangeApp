@@ -3,6 +3,7 @@ package com.example.texchange
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -52,6 +53,12 @@ class HomeActivity : AppCompatActivity() {
             } else {
                 resultsTextView.text = "No results found for \"$query\""
             }
+        }
+
+        val checkoutButton: View = findViewById(R.id.checkout_button)
+        checkoutButton.setOnClickListener {
+            val intent = Intent(this, CheckoutActivity::class.java)
+            startActivity(intent)
         }
 
     }

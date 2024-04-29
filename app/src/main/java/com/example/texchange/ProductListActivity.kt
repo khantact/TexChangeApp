@@ -32,6 +32,7 @@ class ProductListActivity : AppCompatActivity() {
         fab.setOnClickListener {
             fabOnClick()
         }
+
     }
 
     private fun adapterOnClick(product: ProductItem) {

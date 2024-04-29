@@ -35,6 +35,10 @@
             android:exported="true"
             android:theme="@style/AppTheme" />
 
+        <activity android:name=".CheckoutActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme" />
+
 
     </application>
 
