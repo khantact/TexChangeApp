@@ -55,6 +55,7 @@ class HomeActivity : AppCompatActivity() {
             }
         }
 
+
         val checkoutButton: View = findViewById(R.id.checkout_button)
         checkoutButton.setOnClickListener {
             val intent = Intent(this, CheckoutActivity::class.java)
