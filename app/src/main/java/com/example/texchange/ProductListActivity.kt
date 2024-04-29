@@ -7,7 +7,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.RecyclerView
 
-const val PRODUCT_ID = "product id"
+const val PRODUCT_ID = "itemID"
 class ProductListActivity : AppCompatActivity() {
 
     private val shoppingCartViewModel by viewModels<ShoppingCartViewModel> {

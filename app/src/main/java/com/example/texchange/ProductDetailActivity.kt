@@ -22,7 +22,7 @@ class ProductDetailActivity : AppCompatActivity() {
         val productName: TextView = findViewById(R.id.product_detail_name)
         val productImage: ImageView = findViewById(R.id.product_detail_image)
         val productDescription: TextView = findViewById(R.id.product_detail_description)
-        val removeProductButton: Button = findViewById(R.id.remove_button)
+        val addProductButton: Button = findViewById(R.id.add_button)
 
         val id : Long? = intent.extras?.getLong("itemID", -1)
 
@@ -38,7 +38,7 @@ class ProductDetailActivity : AppCompatActivity() {
                 productImage.setImageResource(currentProduct.image)
             }
 
-            removeProductButton.setOnClickListener {
+            addProductButton.setOnClickListener {
                 if (currentProduct != null) {
                     if (!productDetailViewModel.addToCart(currentProduct)) {
                         Toast.makeText(this, getString(R.string.inCart), Toast.LENGTH_LONG)
