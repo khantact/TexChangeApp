@@ -36,7 +36,7 @@ class ProductListActivity : AppCompatActivity() {
     }
 
     private fun adapterOnClick(product: ProductItem) {
-        val intent = Intent(this, ProductDetailActivity::class.java)
+        val intent = Intent(this, ProductDetailRemove::class.java)
         intent.putExtra(PRODUCT_ID, product.id)
         startActivity(intent)
     }

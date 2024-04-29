@@ -20,8 +20,8 @@
         app:backgroundTint="@color/purple_200"
         app:borderWidth="0dp"
         android:contentDescription="button"
-        android:src="@drawable/ic_cart_foreground"
+        android:src="@drawable/ic_home_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

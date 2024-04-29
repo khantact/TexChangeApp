@@ -32,11 +32,11 @@ class DataSource(resources: Resources) {
     }
 
     fun removeProduct(product: ProductItem) {
-        val currentList = productLiveData.value
+        val currentList = shoppingCartLiveData.value
         if (currentList != null) {
             val updatedList = currentList.toMutableList()
             updatedList.remove(product)
-            productLiveData.postValue(updatedList)
+            shoppingCartLiveData.postValue(updatedList)
         }
     }
 
